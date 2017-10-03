@@ -31,8 +31,15 @@ $ git config --list
 4.  As "williamw",
 $ git init
 $ git add README.txt
-$ git commit -m ‘Initial commit’
+$ git commit
 
-$ git remote add origin git@10.0.1.13:/home/git/git/realtor.git
+// Check that the correct credentials are used.
+$ gitk
+
+$ git remote add origin git@10.0.1.13:/home/git/git/pgm.git
 $ git push origin master
 
+
+5. To clone the repo.
+
+  $ git clone git@localhost:/home/git/git/pgm.git

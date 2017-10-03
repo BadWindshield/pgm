@@ -1,0 +1,92 @@
+\documentclass[12pt]{article}
+\usepackage{amssymb, amsmath}
+\usepackage{bm}
+\usepackage{dsfont}
+\usepackage{empheq}
+\usepackage{graphicx}
+\usepackage{float}
+
+% Set up the margins.
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+
+\begin{document}
+
+
+\section{Probabilistic Graphical Models 1: Representation}
+
+\subsection{Week 2 Bayesian network (directed models)}
+
+G : grade
+D: course difficulty
+I : student intelligence
+S : student SAT scores
+L : reference letter
+
+D, I --> G --> L
+I --> S
+
+Chain rule:
+Pr(D, I, G, S, L) = Pr(D) Pr(I) P(G|I, D) Pr(S|I) Pr(L|G)
+
+Pr(X_1, ..., X_n) = prod Pr(X_i | Par_G( X_i ) ), where Par_G( X ) are the parents of X_i over the graph G.
+
+---
+
+Causal reasoning
+e.g., Pr(L = 1 | I = 0) = 0.39
+
+Evidential reasoning (from the bottom up)
+e.g., Pr(D = 1 | G = 3) = 0.63
+
+Intercausal reasoning
+e.g., Pr(I = 1 | G = 2, D = 1) = 0.34
+
+e.g., Let Y = (X_1 or X_2)
+Pr(X_2 = 1 | Y = 1) = 2/3, but
+Pr(X_2 = 1 | Y = 1, X_1 = 1) = 1/2
+
+---
+
+Conditional independence
+
+Example.  Tossing a coin twice, which might be fair or not.
+
+C --> X_1, X_2.
+
+Pr(X_2 = H | X_1 = H) > 0.5 because the coin might not be fair.
+
+However, Pr(X_2 = H| C = coin) is indep of X_1!
+
+In her notation,
+  P does NOT satisfy X_1 perpendicular X_2
+  P satisfies (X_1 perpendicular X_2 | C)
+
+Conditioning can remove independence.
+
+However, conditioning can also introduce independence.
+I, D --> G
+
+Look at Pr(I, D| G = 1).  It couples I and D.
+
+---
+
+Pr(X, Y) = Pr(X) Pr(Y) if X, Y are indep.
+
+Pr(X, Y, Z) ~ phi_1(X, Z) phi_2(Y, Z) if (X perpendicular Y | Z)
+
+---
+
+Any node is d-separated from its non-descendants given its parents.
+
+In other words, if P factorizes over G, in P, any variable is independent of its non-descendants _given_ its parents.
+
+---
+
+I-map (independency map)
+
+I(G) = { (X perpen Y | Z) : d-sep_G(X, Y | Z) }
+
+
+
+\end{document}
