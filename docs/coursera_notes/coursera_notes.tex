@@ -59,8 +59,28 @@ For example, we marginalize $I$.
   \Pr(D) = \sum_{I=i^j} \Pr(I, D)
 \end{equation*}
 
-\subsection{Week 1. Bayesian Network (Directed Models)}
 
+\subsubsection{Factors}
+A factor $\phi$ maps random variables to a real number. That is
+\begin{equation*}
+  \phi : (X_1, \ldots, X_k) \rightarrow \Re
+\end{equation*}
+A joint distribution $\Pr(I, D, G)$ is a factor.
+
+We compute a factor product using
+\begin{equation*}
+  \phi(A=a^i, B=b^j, C=c^k) = \phi_1(A=a^i, B=b^j) \phi_2(B=b^j, C=c^k) \, .
+\end{equation*}
+
+We can marginalize a factor too.
+\begin{equation*}
+  \phi(A=a^i, C=c^k) = \sum_j \phi(A=a^i, B=b^j, C=c^k) \,.
+\end{equation*}
+
+
+
+
+\subsection{Week 1. Bayesian Network (Directed Models)}
 
 Chain rule:
 \begin{equation}
