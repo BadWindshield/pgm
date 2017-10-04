@@ -126,9 +126,7 @@ $\Pr(X_2 = 1 | Y = 1) = 2/3$, but $\Pr(X_2 = 1 | Y = 1, X_1 = 1) = 1/2$.
 
 
 \subsubsection{Flow of Probabilistic Influence}
-Let $X$ be a parent of $Y$.
-
-When can $X$ influence $Y$? In other words, does conditioning on $X$ change our beliefs about $Y$?
+\paragraph{When can $X$ influence $Y$?} In other words, does conditioning on $X$ change our beliefs about $Y$?
 
 \begin{itemize}
   \item $X \rightarrow Y$. $X$ is the parent of $Y$.
@@ -145,6 +143,28 @@ When can $X$ influence $Y$? In other words, does conditioning on $X$ change our 
 
 \end{itemize}
 
+\paragraph{When can $X$ influence $Y$ given evidence about $Z$?}
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+    \hline
+    Scenario & \multicolumn{2}{|c|}{Can $X$ influence $Y$ given evidence about $Z$?} \\ \hline
+     & $W \not\in Z$ & $W \in Z$  \\ \hline
+
+    $X \rightarrow Y$ & Yes & \\
+
+    $X \leftarrow Y$ & Yes & \\
+
+    $X \rightarrow W \rightarrow Y$ & Yes & No \\
+
+    $X \leftarrow W \leftarrow Y$ & Yes & No \\
+
+    $X \leftarrow W \rightarrow Y$ & Yes & No \\
+
+    $X \rightarrow W \leftarrow Y$ & No if $W$ and all its descendants $\not\in Z$ & Yes if $W$ or one of its descendants $\in Z$\\
+    \hline
+  \end{tabular}
+\end{center}
 
 
 % ---
