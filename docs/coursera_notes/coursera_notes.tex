@@ -5,10 +5,16 @@
 \usepackage{empheq}
 \usepackage{graphicx}
 \usepackage{float}
+\usepackage{xcolor,cancel}
 
 % Set up the margins.
 \usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
 
+% See
+%   https://tex.stackexchange.com/questions/20609/strikeout-in-math-mode/20612
+%
+\newcommand\hcancel[2][black]{\setbox0=\hbox{$#2$}
+\rlap{\raisebox{.45\ht0}{\textcolor{#1}{\rule{\wd0}{1pt}}}}#2}
 
 \begin{document}
 
@@ -106,16 +112,40 @@ Given an easier class, $\Pr(L = l^1 | I = i^0, D = d^0) = 0.51$.
 $\Pr(D = d^1 | G = g^3) = 0.63$.
 
 \paragraph{Intercausal reasoning}
-$\Pr(I = i^1) = 0.3$.
 
-$\Pr(I = i^1 | G = g^2) = 0.175$.
+The probability that the student is highly intelligent is $\Pr(I = i^1) = 0.3$.
 
-$\Pr(I = i^1 | G = g^2, D = d^1) = 0.34$.
+Given that the student got a B, $\Pr(I = i^1 | G = g^2) = 0.175$.
+
+Given that he/she got a B and the class was difficult, $\Pr(I = i^1 | G = g^2, D = d^1) = 0.34$.
 
 
-% e.g., Let Y = (X_1 or X_2)
-% Pr(X_2 = 1 | Y = 1) = 2/3, but
-% Pr(X_2 = 1 | Y = 1, X_1 = 1) = 1/2
+As another example, let $Y = (X_1 \text{or} X_2)$.
+
+$\Pr(X_2 = 1 | Y = 1) = 2/3$, but $\Pr(X_2 = 1 | Y = 1, X_1 = 1) = 1/2$.
+
+
+\subsubsection{Flow of Probabilistic Influence}
+Let $X$ be a parent of $Y$.
+
+When can $X$ influence $Y$? In other words, does conditioning on $X$ change our beliefs about $Y$?
+
+\begin{itemize}
+  \item $X \rightarrow Y$. $X$ is the parent of $Y$.
+
+  \item $X \leftarrow Y$. $X$ is the child of $Y$.
+
+  \item $X \rightarrow W \rightarrow Y$.
+
+  \item $X \leftarrow W \leftarrow Y$.
+
+  \item $X \leftarrow W \rightarrow Y$. $W$ is the common parent.
+
+  \item $\hcancel[red]{X \rightarrow W \leftarrow Y}$. $W$ is the common child.
+
+\end{itemize}
+
+
 
 % ---
 
