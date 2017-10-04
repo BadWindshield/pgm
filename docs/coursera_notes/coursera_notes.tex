@@ -22,7 +22,7 @@ Please see the student example in Fig.~\ref{fig:student_example}.
 \begin{figure}[H]
 \centering
 \includegraphics[width=6in]{graphics/student_example.png}
-\caption{Student Example.}
+\caption{Student Example. Each node is annotated with a conditional probability distribution (CPD).}
 \label{fig:student_example}
 \end{figure}
 
@@ -82,26 +82,36 @@ We can marginalize a factor too.
 
 \subsection{Week 1. Bayesian Network (Directed Models)}
 
+A Bayesian network is a directed acyclic graph (DAG) whose nodes represent the random variables $X_1, \ldots, X_n$.
+\subsubsection{Factorization}
 Chain rule:
 \begin{equation}
   \Pr(D, I, G, S, L) = \Pr(D) \Pr(I) \Pr(G|I, D) \Pr(S|I) \Pr(L|G)
 \end{equation}
 
 \begin{equation}
-  \Pr(X_1, ..., X_n) = \prod_i \Pr(X_i | \text{Par}_\mathbb{G}( X_i ) ) \, ,
+  \Pr(X_1, ..., X_n) = \prod_{i=1}^n \Pr(X_i | \text{Par}_\mathbb{G}( X_i ) ) \, ,
 \end{equation}
 where $\text{Par}_\mathbb{G}( X_i )$ are the parents of $X_i$ over the graph $\mathbb{G}$.
 
 % ---
 
-% Causal reasoning
-% e.g., Pr(L = 1 | I = 0) = 0.39
+\subsubsection{Reasoning Patterns}
+\paragraph{Causal reasoning}
+$\Pr(L = l^1 | I = i^0) = 0.39$.
 
-% Evidential reasoning (from the bottom up)
-% e.g., Pr(D = 1 | G = 3) = 0.63
+Given an easier class, $\Pr(L = l^1 | I = i^0, D = d^0) = 0.51$.
 
-% Intercausal reasoning
-% e.g., Pr(I = 1 | G = 2, D = 1) = 0.34
+\paragraph{Evidential reasoning (from the bottom up)}
+$\Pr(D = d^1 | G = g^3) = 0.63$.
+
+\paragraph{Intercausal reasoning}
+$\Pr(I = i^1) = 0.3$.
+
+$\Pr(I = i^1 | G = g^2) = 0.175$.
+
+$\Pr(I = i^1 | G = g^2, D = d^1) = 0.34$.
+
 
 % e.g., Let Y = (X_1 or X_2)
 % Pr(X_2 = 1 | Y = 1) = 2/3, but
