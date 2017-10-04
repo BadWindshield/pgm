@@ -111,6 +111,19 @@ Given an easier class, $\Pr(L = l^1 | I = i^0, D = d^0) = 0.51$.
 \paragraph{Evidential reasoning (from the bottom up)}
 $\Pr(D = d^1 | G = g^3) = 0.63$.
 
+Pay attention to the details in the calculations. We must use Bayes' theorem.
+
+\begin{align*}
+\Pr(d^1 | g^3) & = \frac{\Pr(d^1, g^3)}
+                      {\Pr(g^3)} \\
+               & = \frac{\Pr(d^1, g^3, i^0) + \Pr(d^1, g^3, i^1)}
+                        {\Pr(g^3 | i^0, d^0) \Pr(i^0) \Pr(d^0) + \Pr(g^3 | i^0, d^1) \Pr(i^0) \Pr(d^1) + \ldots} \\
+               & = \frac{\Pr(g^3 | i^0, d^1) \Pr(i^0) \Pr(d^1) + \Pr(g^3 | i^1, d^1) \Pr(i^1) \Pr(d^1)}
+                        {\Pr(g^3 | i^0, d^0) \Pr(i^0) \Pr(d^0) + \Pr(g^3 | i^0, d^1) \Pr(i^0) \Pr(d^1) + \ldots} \, .
+\end{align*}
+
+
+
 \paragraph{Intercausal reasoning}
 
 The probability that the student is highly intelligent is $\Pr(I = i^1) = 0.3$.
