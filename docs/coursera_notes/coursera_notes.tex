@@ -189,24 +189,52 @@ A trail $X_1 - \ldots - X_n$ is active given $Z$ if
 \end{enumerate}
 
 
+\subsubsection{Independence}
+For events $\alpha$ and $\beta$, $\Pr \vdash \alpha \bot \beta$ if
 
-% ---
+\begin{itemize}
+  \item $\Pr(\alpha, \beta) = \Pr(\alpha) \Pr(\beta)$, or
 
-% Conditional independence
+  \item $\Pr(\alpha | \beta) = \Pr(\alpha$), or
 
-% Example.  Tossing a coin twice, which might be fair or not.
+  \item $\Pr(\beta | \alpha) = \Pr(\beta)$
+\end{itemize}
+
+From Wikipedia, $P \vdash Q$ means ``from $P$, I know that $Q$''.
+
+\subsubsection{Conditional independence}
+For sets of random variables $X$, $Y$, and $Z$, $\Pr \vdash (X \bot Y | Z)$ if
+
+\begin{itemize}
+  \item $\Pr(X, Y|Z) = \Pr(X|Z) \Pr(Y|Z)$, or
+
+  \item $\Pr(X|Y, Z) = \Pr(X|Z)$, or
+
+  \item $\Pr(Y|X, Z) = \Pr(Y|Z)$, or
+
+  \item $\Pr(X, Y, Z) \propto \phi_1(X, Z) \phi_2(Y, Z) $
+\end{itemize}
+
+
+
+\paragraph{Example}  Tossing a coin twice, which might be fair or not. The two outcomes (from the two tosses) are $X_1$ and $X_2$.
 
 % C --> X_1, X_2.
 
-% Pr(X_2 = H | X_1 = H) > 0.5 because the coin might not be fair.
+$\Pr(X_2 = \text{head} | X_1 = \text{head}) > 0.5$ because the coin might not be fair.
+However, $\Pr(X_2 = \text{head}| C = \text{fair coin})$ is independent of $X_1$!
 
-% However, Pr(X_2 = H| C = coin) is indep of X_1!
+Also $\Pr(X_2 = \text{head}| C = \text{biased coin})$ is independent of $X_1$.
 
-% In her notation,
-%   P does NOT satisfy X_1 perpendicular X_2
-%   P satisfies (X_1 perpendicular X_2 | C)
+Once we know what the coin is, the two outcomes are no longer correlated.
 
-% Conditioning can remove independence.
+In her notation,
+\begin{itemize}
+  \item $\Pr$ does NOT satisfy $X_1 \bot X_2$
+  \item $\Pr$ satisfies $(X_1 \bot X_2 | C)$.
+\end{itemize}
+Conditioning can remove independence.
+
 
 % However, conditioning can also introduce independence.
 % I, D --> G
