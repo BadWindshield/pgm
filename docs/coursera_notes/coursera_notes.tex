@@ -27,7 +27,7 @@ Please see the student example in Fig.~\ref{fig:student_example}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=6in]{graphics/student_example.png}
+\includegraphics[width=6in]{graphics/example_student.png}
 \caption{Student Example. Each node is annotated with a conditional probability distribution (CPD).}
 \label{fig:student_example}
 \end{figure}
@@ -219,14 +219,19 @@ For sets of random variables $X$, $Y$, and $Z$, $\Pr \vdash (X \bot Y | Z)$ if
 
 \paragraph{Example}  Tossing a coin twice, which might be fair or not. The two outcomes (from the two tosses) are $X_1$ and $X_2$.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=2in]{graphics/example_coin.png}
+\caption{A fair or biased coin is tossed twice. $X_1$ and $X_2$ are the two outcomes, respectively.}
+\label{fig:example_coin}
+\end{figure}
+
 % C --> X_1, X_2.
 
 $\Pr(X_2 = \text{head} | X_1 = \text{head}) > 0.5$ because the coin might not be fair.
 However, $\Pr(X_2 = \text{head}| C = \text{fair coin})$ is independent of $X_1$!
 
-Also $\Pr(X_2 = \text{head}| C = \text{biased coin})$ is independent of $X_1$.
-
-Once we know what the coin is, the two outcomes are no longer correlated.
+Also $\Pr(X_2 = \text{head}| C = \text{biased coin})$ is independent of $X_1$. That is, once we know what the coin is, the two outcomes are no longer correlated.
 
 In her notation,
 \begin{itemize}
@@ -236,10 +241,10 @@ In her notation,
 Conditioning can remove independence.
 
 
-% However, conditioning can also introduce independence.
+However, conditioning can also introduce independence.
 % I, D --> G
 
-% Look at Pr(I, D| G = 1).  It couples I and D.
+Look at $\Pr(I, D| G = 1)$.  It couples $I$ and $D$.
 
 % ---
 
