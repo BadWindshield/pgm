@@ -261,24 +261,32 @@ I, D \rightarrow G
 
 Look at $\Pr(I, D| G = 1)$.  It couples $I$ and $D$.
 
+
+\subsubsection{Independencies in Bayesian Networks}
+$X$ and $Y$ are $d$-separated if $\mathbb{G}$ given $Z$,
+$\text{d-sep}_{\mathbb{G}}(X, Y|Z)$,
+if there is no active trail in $\mathbb{G}$ between $X$
+and $Y$ given $Z$.
+
+If $\Pr$ factorizes over $\mathbb{G}$, and $d-\text{sep}_{\mathbb{G}}(X, Y|Z)$, then $\Pr$ satisfies $(X \bot Y | Z)$.
+In other words,
+\begin{equation*}
+  \text{factorization} \rightarrow \text{independence}
+\end{equation*}
+
+Any node is $d$-separated from its non-descendants given its parents.
+In other words, if $\Pr$ factorizes over $\mathbb{G}$, then in $\Pr$,
+any variable is independent of its non-descendants given its parents.
+
 % ---
 
-% Pr(X, Y) = Pr(X) Pr(Y) if X, Y are indep.
+\paragraph{$I$-map (Independency Map)}
 
-% Pr(X, Y, Z) ~ phi_1(X, Z) phi_2(Y, Z) if (X perpendicular Y | Z)
+\begin{equation*}
+  I(\mathbb{G}) = \{ (X \bot Y | Z) : d-\text{sep}_{\mathbb{G}}(X, Y|Z) \}
+\end{equation*}
 
-% ---
-
-% Any node is d-separated from its non-descendants given its parents.
-
-% In other words, if P factorizes over G, in P, any variable is independent of its non-descendants _given_ its parents.
-
-% ---
-
-% I-map (independency map)
-
-% I(G) = { (X perpen Y | Z) : d-sep_G(X, Y | Z) }
-
+If $\Pr$ satisfies $I(\mathbb{G})$, $\mathbb{G}$ is an $I$-map of $\Pr$.
 
 
 \end{document}
