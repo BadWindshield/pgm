@@ -278,7 +278,6 @@ Any node is $d$-separated from its non-descendants given its parents.
 In other words, if $\Pr$ factorizes over $\mathbb{G}$, then in $\Pr$,
 any variable is independent of its non-descendants given its parents.
 
-% ---
 
 \paragraph{$I$-map (Independency Map)}
 
@@ -289,5 +288,22 @@ any variable is independent of its non-descendants given its parents.
 If $\Pr$ satisfies $I(\mathbb{G})$, $\mathbb{G}$ is an $I$-map of $\Pr$.
 
 $\Pr$ factorizes over $\mathbb{G} \leftrightarrow \mathbb{G}$ is an $I$-map for $\Pr$.
+
+\paragraph{Quiz}
+
+$I$-maps can also be defined directly on graphs as follows. Let $I(\mathbb{G})$ be the set of independencies encoded by a graph $\mathbb{G}$. Then $\mathbb{G}_1$ is an $I$-map for $\mathbb{G}_2$ if $I(\mathbb{G}_1) \subseteq I(\mathbb{G}_2)$.
+
+A graph $\mathbb{K}$ is an $I$-map for a graph $\mathbb{G}$ if and only if all of the independencies encoded by $\mathbb{K}$ are also encoded by $\mathbb{G}$.
+
+\subsubsection{Naive Bayes}
+
+Class $C \rightarrow$ Features $X_1, \ldots, X_n$.
+
+Assume that $(X_i \bot X_j | C)$ for all $X_i, X_j$.
+\begin{equation*}
+  \Pr(C, X_1, \ldots, X_n) = \Pr(C) \sum_{i=1}^n \Pr(X_i | C)
+\end{equation*}
+
+
 
 \end{document}
