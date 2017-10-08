@@ -11,7 +11,7 @@ $ cat xx.pub >> ~/ssh/authorized_keys
 
 
 2. Set up the repo.
-$ cd git/git
+$ cd git
 $ mkdir pgm.git
 $ cd pgm.git
 $ git init --bare
