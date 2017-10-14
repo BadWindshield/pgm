@@ -27,7 +27,7 @@ Please see the student example in Fig.~\ref{fig:student_example}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=6in]{graphics/example_student.png}
+\includegraphics[width=6.5in]{graphics/example_student.png}
 \caption{Student Example. Each node is annotated with a conditional probability distribution (CPD).}
 \label{fig:student_example}
 \end{figure}
@@ -303,6 +303,53 @@ Assume that $(X_i \bot X_j | C)$ for all $X_i, X_j$.
 \begin{equation*}
   \Pr(C, X_1, \ldots, X_n) = \Pr(C) \sum_{i=1}^n \Pr(X_i | C)
 \end{equation*}
+
+
+
+\subsection{Week 2. Template Models for Bayesian Networks}
+
+\subsubsection{Temporal Models}
+
+Using the chain rule for probability,
+\begin{equation*}
+  \Pr(X^{(0:T)}) = \Pr(X^{(0)}) \prod_{t=0}^{T-1} \Pr\left(X^{(t+1)} \middle\vert X^{(0:t)} \right) \, .
+\end{equation*}
+
+If we make the Markov assumption where the system has no memory, $\left( X^{(t+1)} \bot X^{(0:t-1)} \middle\vert X^{(t)}\right)$.
+We have
+\begin{equation*}
+  \Pr(X^{(0:T)}) = \Pr(X^{(0)}) \prod_{t=0}^{T-1} \Pr\left(X^{(t+1)} \middle\vert X^{(t)} \right) \, .
+\end{equation*}
+
+We can further assume that the probability model is time-invariant.
+\begin{equation*}
+  \Pr\left(X^{(t+1)} \middle\vert X^{(t)} \right) = \Pr\left(X' \middle\vert X \right) \, .
+\end{equation*}
+
+In the traffic model shown in Fig.~\ref{fig:example_template_transit_model},
+\begin{equation*}
+  \Pr(W', V', L', F', O' | W, V, L, F) = \Pr(W'|W) \Pr(V'|W, V) \Pr(L' | L, V) \Pr(F' | F, W) \Pr(O' | L', F') \, .
+\end{equation*}
+Note that $O$ is not referenced as it does not affect anything later in time.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=6.5in]{graphics/example_template_transit_model.png}
+\caption{A Traffic Model.}
+\label{fig:example_template_transit_model}
+\end{figure}
+
+\subsection{Week 2. Structured CPDs for Bayesian Networks}
+
+
+\subsection{Week 3. Markov Networks (Undirected Models)}
+
+
+\subsection{Week 4. Decision Making}
+
+
+\subsection{Week 5. Knowledge Engineering \& Summary}
+
 
 
 
