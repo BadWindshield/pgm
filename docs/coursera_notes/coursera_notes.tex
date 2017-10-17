@@ -363,6 +363,25 @@ where $c$ is an assignment of some random variable $C$.
 \label{fig:example_tree_structured_cpds}
 \end{figure}
 
+\paragraph{Multiplexer CPD}
+
+In a multiplexer CPD, $A$ is a selector that decides which of the $Z_i$'s to copy to $Y$.
+\begin{equation*}
+  \Pr(Y | A, Z_1, \ldots, Z_k) = 
+    \begin{cases}
+    1 & Y = Z_A \\
+    0 & \text{otherwise}
+    \end{cases}
+\end{equation*}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=4in]{graphics/multiplexer_cpd.png}
+\caption{The Multiplexer CPD.}
+\label{fig:multiplexer_cpd}
+\end{figure}
+
+
 
 \subsection{Week 3. Markov Networks (Undirected Models)}
 
