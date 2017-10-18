@@ -365,7 +365,7 @@ where $c$ is an assignment of some random variable $C$.
 
 \paragraph{Multiplexer CPD}
 
-In a multiplexer CPD, $A$ is a selector that decides which of the $Z_i$'s to copy to $Y$.
+In a multiplexer CPD, $A$ is a selector that decides which of the $Z_i$'s will be copied to $Y$.
 \begin{equation*}
   \Pr(Y | A, Z_1, \ldots, Z_k) = 
     \begin{cases}
@@ -384,13 +384,7 @@ In a multiplexer CPD, $A$ is a selector that decides which of the $Z_i$'s to cop
 
 \subsubsection{Independence of Causal Influence}
 
-\begin{figure}[H]
-\centering
-%\includegraphics[width=4in]{graphics/noisy_or_cpd.png}
-\caption{A Noisy OR CPD.}
-\label{fig:noisy_or_cpd}
-\end{figure}
-
+\paragraph{Noise OR CPD}
 \begin{align*}
   \Pr(Z_i | X_i) & = 
     \begin{cases}
@@ -400,6 +394,42 @@ In a multiplexer CPD, $A$ is a selector that decides which of the $Z_i$'s to cop
   \Pr(Y=0 | X_1, \ldots, X_k) & = (1 - \lambda_0) \prod_{i: X_i = 1} (1 - \lambda_i) \, . \\
   \Pr(Y=1 | X_1, \ldots, X_k) & = 1 - \Pr(Y=0 | X_1, \ldots, X_k) \, .
 \end{align*}
+
+In other words, $\Pr(Z_i=0 | X_i=1) = 1 - \lambda_i$.
+
+\begin{figure}[H]
+\centering
+%\includegraphics[width=4in]{graphics/noisy_or_cpd.png}
+\caption{A Noisy OR CPD.}
+\label{fig:noisy_or_cpd}
+\end{figure}
+
+
+\paragraph{Sigmoid CPD}
+
+
+\begin{figure}[H]
+\centering
+%\includegraphics[width=4in]{graphics/sigmoid_cpd.png}
+\caption{A Sigmoid CPD.}
+\label{fig:sigmoid_cpd}
+\end{figure}
+
+
+\subsubsection{Continuous Variables}
+
+\paragraph{Temperature Example}
+\begin{align*}
+  S & \sim \mathcal{N}(T, \sigma^2) \\
+  T' & \sim 
+    \begin{cases}
+      \mathcal{N}(\alpha_0 T + (1-\alpha_0)O, \sigma_{0T}^2) & \text{if } D = 0 \\
+      \mathcal{N}(\alpha_1 T + (1-\alpha_1)O, \sigma_{1T}^2) & \text{if } D = 1
+    \end{cases}
+\end{align*}
+
+\paragraph{Linear Gaussian}
+
 
 \subsection{Week 3. Markov Networks (Undirected Models)}
 
