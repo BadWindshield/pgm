@@ -349,7 +349,7 @@ where $c$ is an assignment of some random variable $C$.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=6.5in]{graphics/example_context_specific_independence.png}
+\includegraphics[width=6in]{graphics/example_context_specific_independence.png}
 \caption{A Sample Question on Context-Specific Independence.  The answers are False, True, True, and False.}
 \label{fig:example_context_specific_independence}
 \end{figure}
@@ -358,7 +358,7 @@ where $c$ is an assignment of some random variable $C$.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=6.5in]{graphics/example_tree_structured_cpds.png}
+\includegraphics[width=6in]{graphics/example_tree_structured_cpds.png}
 \caption{A Sample Question on Tree-Structured CPDs.  The answers are True, False, True, and True.}
 \label{fig:example_tree_structured_cpds}
 \end{figure}
@@ -369,7 +369,7 @@ In a multiplexer CPD, $A$ is a selector that decides which of the $Z_i$'s to cop
 \begin{equation*}
   \Pr(Y | A, Z_1, \ldots, Z_k) = 
     \begin{cases}
-    1 & Y = Z_A \\
+    1 & \text{if } Y = Z_A \\
     0 & \text{otherwise}
     \end{cases}
 \end{equation*}
@@ -382,6 +382,24 @@ In a multiplexer CPD, $A$ is a selector that decides which of the $Z_i$'s to cop
 \end{figure}
 
 
+\subsubsection{Independence of Causal Influence}
+
+\begin{figure}[H]
+\centering
+%\includegraphics[width=4in]{graphics/noisy_or_cpd.png}
+\caption{A Noisy OR CPD.}
+\label{fig:noisy_or_cpd}
+\end{figure}
+
+\begin{align*}
+  \Pr(Z_i | X_i) & = 
+    \begin{cases}
+      0 & \text{if } X_i = 0 \\
+      \lambda_i & \text{if } X_i = 1
+    \end{cases} \\
+  \Pr(Y=0 | X_1, \ldots, X_k) & = (1 - \lambda_0) \prod_{i: X_i = 1} (1 - \lambda_i) \, . \\
+  \Pr(Y=1 | X_1, \ldots, X_k) & = 1 - \Pr(Y=0 | X_1, \ldots, X_k) \, .
+\end{align*}
 
 \subsection{Week 3. Markov Networks (Undirected Models)}
 
