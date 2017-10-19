@@ -29,7 +29,7 @@ Please see the student example in Fig.~\ref{fig:student_example}.
 \centering
 \includegraphics[width=6.5in]{graphics/example_student.png}
 \caption{Student Example. Each node is annotated with a conditional probability distribution (CPD).}
-\label{fig:student_example}
+\label{fig:example_student}
 \end{figure}
 
 
@@ -349,7 +349,7 @@ where $c$ is an assignment of some random variable $C$.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=6in]{graphics/example_context_specific_independence.png}
+\includegraphics[width=5.5in]{graphics/example_context_specific_independence.png}
 \caption{A Sample Question on Context-Specific Independence.  The answers are False, True, True, and False.}
 \label{fig:example_context_specific_independence}
 \end{figure}
@@ -376,7 +376,7 @@ In a multiplexer CPD, $A$ is a selector that decides which of the $Z_i$'s will b
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=4in]{graphics/multiplexer_cpd.png}
+\includegraphics[width=3in]{graphics/multiplexer_cpd.png}
 \caption{The Multiplexer CPD.}
 \label{fig:multiplexer_cpd}
 \end{figure}
@@ -399,7 +399,7 @@ In other words, $\Pr(Z_i=0 | X_i=1) = 1 - \lambda_i$.
 
 \begin{figure}[H]
 \centering
-%\includegraphics[width=4in]{graphics/noisy_or_cpd.png}
+\includegraphics[width=3.5in]{graphics/noisy_or_cpd.png}
 \caption{A Noisy OR CPD.}
 \label{fig:noisy_or_cpd}
 \end{figure}
@@ -407,10 +407,14 @@ In other words, $\Pr(Z_i=0 | X_i=1) = 1 - \lambda_i$.
 
 \paragraph{Sigmoid CPD}
 
+\begin{align*}
+  Z & = w_0 + \sum_{i=1}^k w_i X_i \\
+  \Pr(y^1 | X_1, \ldots, X_k) & = \text{sigmoid}(Z)
+\end{align*}
 
 \begin{figure}[H]
 \centering
-%\includegraphics[width=4in]{graphics/sigmoid_cpd.png}
+\includegraphics[width=3in]{graphics/sigmoid_cpd.png}
 \caption{A Sigmoid CPD.}
 \label{fig:sigmoid_cpd}
 \end{figure}
