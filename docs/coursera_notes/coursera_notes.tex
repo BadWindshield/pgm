@@ -408,8 +408,8 @@ In other words, $\Pr(Z_i=0 | X_i=1) = 1 - \lambda_i$.
 \paragraph{Sigmoid CPD}
 
 \begin{align*}
-  Z & = w_0 + \sum_{i=1}^k w_i X_i \\
-  \Pr(y^1 | X_1, \ldots, X_k) & = \text{sigmoid}(Z)
+  Z & = w_0 + \sum_{i=1}^k w_i X_i \, .\\
+  \Pr(y^1 | X_1, \ldots, X_k) & = \text{sigmoid}(Z) \, .
 \end{align*}
 
 \begin{figure}[H]
@@ -432,7 +432,18 @@ In other words, $\Pr(Z_i=0 | X_i=1) = 1 - \lambda_i$.
     \end{cases}
 \end{align*}
 
-\paragraph{Linear Gaussian}
+\paragraph{Conditional Linear Gaussian}
+
+\begin{equation*}
+  Y \sim \mathcal{N} \left( w_{a0} + \sum_i w_{ai} X_i, \sigma_a^2 \right) \, .
+\end{equation*}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=3in]{graphics/conditional_linear_gaussian.png}
+\caption{A Conditional Linear Guassian.}
+\label{fig:conditional_linear_gaussian}
+\end{figure}
 
 
 \subsection{Week 3. Markov Networks (Undirected Models)}
